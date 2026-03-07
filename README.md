@@ -199,37 +199,103 @@ Stores application data in DynamoDB.
 
 ---
 
-# 🚀 Installation
+Here is the **updated Installation section only** for your `README.md`, including the configuration files you mentioned.
 
-### 1️⃣ Clone Repository
+---
+
+# ⚙️ Installation
+
+Follow the steps below to run the project locally.
+
+---
+
+## 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/JV-Vigneesh/ai-quiz-system.git
+git clone https://github.com/yourusername/ai-quiz-system.git
+cd ai-quiz-system
 ```
 
 ---
 
-### 2️⃣ Frontend Setup
+## 2️⃣ Install Frontend Dependencies
+
+Navigate to the frontend folder and install required packages.
 
 ```bash
-cd frontend
 npm install
-npm start
+```
+
+---
+## 3️⃣ Configure Environment Variables ⚙️
+
+Before running the application, update the required AWS and AI configuration values in the frontend project.
+
+### 1. Update `constants.ts`
+
+Open the file:
+
+```
+src/constants.ts
+```
+
+Update the following values:
+
+* **API_BASE_URL** – Your AWS API Gateway base URL
+* **GEMINI_API_KEY** – Your Google Gemini API key used for AI question generation
+* **COGNITO.REGION** – AWS region where Cognito is deployed
+* **COGNITO.USER_POOL_ID** – Cognito User Pool ID
+* **COGNITO.AUTHORITY** – Cognito authorization endpoint
+* **COGNITO.CLIENT_ID** – Cognito App Client ID
+* **COGNITO.DOMAIN** – Cognito hosted UI domain
+
+These values connect the frontend application with your AWS backend services.
+
+---
+
+### 2. Update `main.tsx`
+
+Open the file:
+
+```
+src/main.tsx
+```
+
+Update the Cognito authentication configuration:
+
+* **authority** – Cognito authorization endpoint
+* **client_id** – Cognito App Client ID
+
+This configuration enables **OIDC authentication using AWS Cognito** for user login.
+
+---
+
+## 4️⃣ Start the Development Server
+
+Run the React development server.
+
+```bash
+npm run dev
+```
+
+The application will start at:
+
+```
+http://localhost:8080
 ```
 
 ---
 
-### 3️⃣ Backend Setup
+## 5️⃣ Backend Setup
 
-Deploy Lambda functions using **AWS Console or AWS CLI**.
+Deploy backend APIs using AWS services:
 
-Configure environment variables:
+* AWS Lambda
+* AWS API Gateway
+* AWS DynamoDB
+* AWS Cognito
 
-```
-QUESTION_TABLE
-QUIZ_TABLE
-USER_POOL_ID
-```
+Ensure the API Gateway URL is updated in `constants.ts`.
 
 ---
 
