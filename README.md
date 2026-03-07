@@ -264,3 +264,9 @@ Steps:
 * 🌍 Multi-language support
 * 📊 Advanced analytics dashboards
 * 🤖 Adaptive AI-based quiz difficulty
+
+---
+
+# 📄 License
+
+This project was developed as part of **M.Tech Project Work in Cloud Computing**.
